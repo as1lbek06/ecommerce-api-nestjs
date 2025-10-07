@@ -23,8 +23,8 @@ Bu loyiha NestJS va PostgreSQL yordamida yaratilgan to'liq E-commerce API hisobl
 
 ### 1. Repositoriyani klonlash
 ```bash
-git clone <repository-url>
-cd ecommerce-api
+git clone https://github.com/as1lbek06/ecommerce-api-nestjs.git
+cd ecommerce-api-nestjs
 ```
 
 ### 2. Dependencies o'rnatish
@@ -55,8 +55,44 @@ PORT=3000
 NODE_ENV=development
 ```
 
-### 4. PostgreSQL ma'lumotlar bazasini sozlash
-PostgreSQL'ni o'rnating va `ecommerce` nomli ma'lumotlar bazasini yarating.
+## ⚡ Tezkor boshlash
+
+Loyihani tezda ishga tushirish uchun:
+
+```bash
+# 1. Loyihani yuklab olish
+git clone https://github.com/as1lbek06/ecommerce-api-nestjs.git
+cd ecommerce-api-nestjs
+
+# 2. Barcha kerakli narsalarni o'rnatish
+npm install
+npm run setup
+
+# 3. .env faylida JWT_SECRET ni o'zgartiring!
+# 4. Development uchun SQLite ishlatish (PostgreSQL o'rniga)
+# src/database/database.module.ts da type: 'sqlite' qiling
+
+# 5. Ishga tushirish
+npm run start:dev
+```
+
+🚀 **Shundan so'ng API http://localhost:3000 da ishlaydi!**  
+📚 **API hujjatlari: http://localhost:3000/api/docs**
+
+## 🛠 Batafsil o'rnatish
+
+### 3. Muhit o'zgaruvchilarini sozlash
+```bash
+# PostgreSQL o'rnatish (Ubuntu/Debian)
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+# Database yaratish
+sudo -u postgres createdb ecommerce
+
+# Yoki SQLite ishlatish uchun (development)
+# src/database/database.module.ts faylida type: 'sqlite' qiling
+```
 
 ### 5. Ilovani ishga tushirish
 ```bash
